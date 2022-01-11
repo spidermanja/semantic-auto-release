@@ -1,0 +1,17 @@
+{
+  "name": "semantic-auto-release-demo",
+  "version": "1.0.0",
+  "description": "This is the demo for automatic semantic version releases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.7",
+    "typescript": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "author": "spidermanja <38@tg.com>",
+  "license": "MIT"
+}
