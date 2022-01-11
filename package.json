@@ -4,7 +4,7 @@
   "description": "This is the demo for automatic semantic version releases",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "devDependencies": {
     "jsdoc": "^3.6.7",
