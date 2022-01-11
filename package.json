@@ -1,17 +1,23 @@
 {
   "name": "semantic-auto-release-demo",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "This is the demo for automatic semantic version releases",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "",
+    "semantic-release": "semantic-release --branches main"
   },
   "devDependencies": {
     "jsdoc": "^3.6.7",
     "typescript": "^4.3.2",
     "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "semantic-release": "^18.0.1"
   },
   "author": "spidermanja <38@tg.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spidermanja/semantic-auto-release.git"
+  }
 }
