@@ -6,7 +6,7 @@
   "scripts": {
     "test": "",
     "postpublish": "npm run publish-npm",
-    "publish-npm": "npm publish --access public --ignore-scripts --@spidergrep:registry='https://registry.npmjs.org'"
+    "publish-npm": "npm publish --access public --ignore-scripts --registry='https://registry.npmjs.org/spidergrep'"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
