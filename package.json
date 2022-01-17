@@ -1,5 +1,5 @@
 {
-  "name": "semantic-auto-release-demo",
+  "name": "semantic-auto-release",
   "version": "0.0.0-development",
   "description": "This is the demo for automatic semantic version releases",
   "main": "index.js",
@@ -21,10 +21,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/spidermanja/semantic-auto-release.git"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  }  
 }
