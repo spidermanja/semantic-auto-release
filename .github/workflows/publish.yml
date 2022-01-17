@@ -23,7 +23,8 @@ jobs:
           run: echo "${{ github.event.release.tag_name }}"
         - name: Npm registry authentication
           run: npm set //registry.npmjs.org/:_authToken ${{secrets.NPM_TOKEN}}
-        - name: Publish packages
-          run: npm publish 
+        - name: UPdate package.json
+          run: sed -i "s|\"version\": \"[^\"]*\"|\"version\": \"${{ github.event.release.tag_name }}\"|" package.json 
+       #   run: npm publish 
 
 
