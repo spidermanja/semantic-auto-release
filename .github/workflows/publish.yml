@@ -4,8 +4,10 @@
 name: Node.js CI
 
 on:
+  release:
+    types: [published]
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
     branches: [ main ]
 
@@ -39,11 +41,17 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run semantic-release
-      env: 
-        NPM_TOKEN: $ {{ secrets.NPM_TOKEN }}
-        GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
+
+    - name: Set Package registry 
+      run: npm config set registry https://npm.pkg.github.com
+    - name: Github package authentication
+      run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
+    - name: NPM registry authentication
+      run: npm set //registry.npmjs.org/:_authToken $ {{ secrets.NPM_TOKEN }}
+    - name: NPM Publish
+      run: npm publish
+       
+    
         
     
     
