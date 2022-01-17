@@ -1,25 +1,29 @@
-name: Release
+name: Upload Release
 
 on:
+  
   release:
     types: [published]
 
 jobs:
-  publish: 
+  # Confirm that build was upload successfully
+          
+  publish:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
           with:
             node-version: 14
+            #registry-url: https://registry.npmjs.org/
+        
+        - name: Set package registry
+          run: npm config set registry https://npm.pkg.github.com
+        - name: Github package registry authentication
+          run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+        - name: Npm registry authentication
+          run: npm set //registry.npmjs.org/:_authToken ${{secrets.NPM_TOKEN}}
+        - name: Publish packages
+          run: npm publish 
 
-        - name: Prepare update
-          run: echo "Deploying to production server on branch $GITHUB_REF"
-        - name: Set Package registry 
-        - name: Github package authentication
-      #   run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
-        - name: NPM registry authentication
-          run: npm set //registry.npmjs.org/:_authToken $ {{ secrets.NPM_TOKEN }}
-        - name: NPM Publish
-          run: npm publish
 
