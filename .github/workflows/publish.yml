@@ -22,10 +22,13 @@ jobs:
       with:
         node-version: 14
 
+    - name: Prepare update
+      run: |
+        sed -i "s|\"version\": \"[^\"]*\"|\"version\": \"${{ github.event.release.tag_name }}\"|" package.json
     - name: Set Package registry 
-      run: npm config set registry https://npm.pkg.github.com
+     # run: npm config set registry https://npm.pkg.github.com
     - name: Github package authentication
-      run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
+      #run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
     - name: NPM registry authentication
       run: npm set //registry.npmjs.org/:_authToken $ {{ secrets.NPM_TOKEN }}
     - name: NPM Publish
