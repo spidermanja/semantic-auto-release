@@ -5,22 +5,21 @@ on:
     types: [published]
 
 jobs:
-     #- run: npm test
   publish: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 14
 
-      - name: Prepare update
-        run: echo "Deploying to production server on branch $GITHUB_REF"
-      - name: Set Package registry 
-      - name: Github package authentication
-    #   run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
-      - name: NPM registry authentication
-        run: npm set //registry.npmjs.org/:_authToken $ {{ secrets.NPM_TOKEN }}
-      - name: NPM Publish
-        run: npm publish
+        - name: Prepare update
+          run: echo "Deploying to production server on branch $GITHUB_REF"
+        - name: Set Package registry 
+        - name: Github package authentication
+      #   run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
+        - name: NPM registry authentication
+          run: npm set //registry.npmjs.org/:_authToken $ {{ secrets.NPM_TOKEN }}
+        - name: NPM Publish
+          run: npm publish
 
