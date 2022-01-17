@@ -22,7 +22,7 @@ jobs:
           node-version: 14
       - name: Prepare update
         run: |
-          sed -i "s|\"version\": \"[^\"]*\"|\"version\": \""${{ github.event.release.tag_name }}\"|" package.json
+         sed -i "s|\"version\": \"[^\"]*\"|\"version\": \"${{ github.event.release.tag_name }}\"|" package.json
       - name: Set Package registry 
       - name: Github package authentication
     #   run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
