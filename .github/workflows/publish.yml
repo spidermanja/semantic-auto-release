@@ -21,9 +21,7 @@ jobs:
         with:
           node-version: 14
       - name: Prepare update
-        run: |
-         echo "Deploying to production server on branch $GITHUB_REF"
-         echo "TAG:${{ github.event.release.tag_name }}"
+        run: echo "Deploying to production server on branch $GITHUB_REF"
       - name: Set Package registry 
       - name: Github package authentication
     #   run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN}}
