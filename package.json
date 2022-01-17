@@ -1,6 +1,6 @@
 {
   "name": "semantic-auto-release",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "This is the demo for automatic semantic version releases",
   "main": "index.js",
   "scripts": {
